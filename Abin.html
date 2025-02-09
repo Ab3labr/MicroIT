@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abin Binu</title>
+    <link rel="stylesheet" href="Abin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">Abin Binu</div>
+                <ul id="nav-menu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <!-- <li><a href="#portfolio">Portfolio</a></li> -->
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-content">
+                <div class="header-text">
+                    <p>Front-End Developer</p>
+                    <h1>Hi, I'm <span>Abin</span><br>Binu From India</h1>
+                </div>
+                <div class="profile-image">
+                    <img src="Abin_images/Abin.jpg" alt="Abin Binu">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-------------about--------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Abin_images/Abin.jpg" alt="Abin Binu">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I’m Abin Binu, a tech enthusiast and developer passionate about app development, frontend design, and AI/ML.
+                    </p>
+                            <!-- Tab Links -->
+                            <div class="tab-titles">
+                                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                                <p class="tab-links" onclick="opentab('education')">Education</p>
+                            </div>
+                    
+                            <!-- Tab Content -->
+                            <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>Front-End</span><br>Developer</li>
+                                    <li><span>Web Development</span><br>Web App Development</li>
+                                    <li><span>App Development</span><br>Building Android Apps</li>
+                                </ul>
+                            </div>
+                    
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>B.Tech in AI & ML</span><br>Vellore Institute of Technology, Amaravati</li>
+                                    <li><span>Intermediate 1st and 2nd Year</span><br>SR Prime College, Kadipikonda,Warangal</li>
+                                    <li><span>10th Class</span><br>St. Gabriel's High School, Fathimanagar,Warangal</li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<!-------------services---------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-titles">My Services</h1>
+        <div class="services-list">
+            <div>
+                <h2>VSYNC</h2>
+                <p>A mobile application developed for college management, aimed at streamlining academic activities, scheduling, and communication. Built with Flutter for cross-platform support and a user-friendly interface.</p>
+            </div>
+            <div>
+                <h2>VAYOAURA</h2>
+                <p>A comprehensive travel agency website inspired by platforms like Travel Bullz. Designed to facilitate seamless booking experiences, it features destination showcases, package details, and real-time availability updates, all with a modern and intuitive interface..</p>
+            </div>
+            <div>
+                <h2>GLAM AR</h2>
+                <p>An AI and Computer Vision-based project that provides virtual try-ons for makeup and accessories using Augmented Reality. Integrates machine learning algorithms for facial analysis and a seamless user experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Section -->
+<div id="contact">
+    <div class="container">
+        <h1 class="sub-title">Contact Me</h1>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> abinbinu0505@gmail.com</p><br>
+                <!-- <p><i class="fas fa-phone"></i> +91 6305882089</p> -->
+                <p><i class="fas fa-map-marker-alt"></i> Telangana, India</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/abin-binu-b2a232275/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="abinbinu0505@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/abin_binu99/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="https://wa.me/6305882089" target="_blank"><i class="fab fa-whatsapp"></i></a> -->
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                    <p id="success-message" class="hidden">Message sent successfully! 🚀</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    // Smooth Scrolling for Navbar Links
+document.querySelectorAll("nav ul li a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        window.scrollTo({
+            top: targetElement.offsetTop - 50, 
+            behavior: "smooth"
+        });
+    });
+});
+
+        var tablinks= document.getElementsByClassName("tab-links");
+        var tabcontents= document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    let successMessage = document.getElementById("success-message");
+    
+    // Show success message
+    successMessage.style.display = "block";
+
+    // Wait 2 seconds before redirecting to Gmail
+    setTimeout(() => {
+        let name = document.getElementById("name").value;
+        // let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        let mailtoLink = `mailto:https://mail.google.com/mail/u/2/#inbox.com?subject=Message from ${name}&body=Email: ${email}%0D%0A%0D%0A${message}`;
+        window.location.href = mailtoLink;
+    }, 2000); // Redirects after 2 seconds
+});
+window.onbeforeunload = function () {
+    document.documentElement.scrollTop = document.getElementById("header").offsetTop;
+};
+
+
+    </script>
+</body>
+</html>
