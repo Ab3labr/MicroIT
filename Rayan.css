@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #ffffff;
+    --text-color: #ccd6f6;
+    --background-color: #09162a;
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Mouse Glow Effect (Covers Entire Page) */
+.mouse-glow {
+    position: fixed;
+    width: 125vw;
+    height: 125vh;
+    background: radial-gradient(
+        circle at center,
+        rgba(131, 100, 255, 0.1) 0%,
+        rgba(100, 198, 255, 0) 60%
+    );
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 100; /* Behind content but above page background */
+    filter: blur(50px);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Left Section (Static) */
+.left-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100vh;
+    padding: 7rem 10%;
+    z-index: 0; /* Ensures content stays above the glow */
+    background-color: var(--background-color); /* Solid background */
+    overflow-y: auto;
+}
+
+.name-section {
+    margin-bottom: 6rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #8892b0;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #8892b0;
+    margin: 0;
+}
+
+nav {
+    margin-top: 3.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin:  0;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 1.5rem; /* Space between links */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block; /* Allow transform to work */
+    transition: color 2.3s ease, transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth transition */
+    transition: color 1.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1); /* Slightly grow on hover */
+
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    gap: 1.5rem; /* Space between icons */
+    margin-top: 4.5rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* Right Section (Scrollable) */
+.right-section {
+    margin-left: 30%;
+    padding: 1rem 20%;
+    position: relative;
+    z-index: 0; /* Allows glow to show through */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100vh; /* Full height */
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.date {
+    color: #8892b0;
+    font-weight: 500;
+}
+
+.details h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.details p {
+    color: #8892b0;
+    margin: 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+    gap: 2rem;
+    
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 0px solid rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #8892b0;
+    border-top: 1px solid #233554;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    .left-section {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 2rem;
+    }
+
+    .right-section {
+        margin-left: 0;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+.project-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--background-color); /* Adjust to your theme */
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+    text-align: center;
+}
+
+.project-btn:hover {
+    background: var(--background-color); /* Darker color on hover */
+    transform: scale(1.05);
+}
